@@ -2,32 +2,31 @@
 
 using namespace std;
 
-void ExampleFunction();
-void Function();
+bool FunctionExample();
 
 int main()
 {
-	for (int i = 0; i <= 10; i++)
+	if (FunctionExample())
 	{
-		ExampleFunction();
-		Function();
+		cout << "Input worked!\n";
+	}
+	else
+	{
+		cout << "Error!\n";
 	}
 
 	return 0;
 }
 
-void ExampleFunction()
+bool FunctionExample()
 {
-	static int counter = 0;
+	cout << "Enter a number: ";
+	int var;
 
-	counter += 3;
-	cout << "Count: " << counter << endl;
-}
+	cin >> var;
 
-void Function()
-{
-	int counter = 0;
-
-	counter += 4;
-	cout << "A Count: " << counter << endl;
+	if (cin)
+		return true;
+	else
+		return false;
 }
